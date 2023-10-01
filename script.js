@@ -1,18 +1,21 @@
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+// Firebase Configuration
 const firebaseConfig = {
     apiKey: "AIzaSyB8ysU7L_GXnYwMtLAHAp6clC4t27TJIV0",
-    authDomain: "temporarynotepad.firebaseapp.com",
-    projectId: "temporarynotepad",
-    storageBucket: "temporarynotepad.appspot.com",
-    messagingSenderId: "998970069593",
-    appId: "1:998970069593:web:93065677dbcd790201d748",
-    measurementId: "G-5Q0KJ62KWM"
-  };
+  authDomain: "temporarynotepad.firebaseapp.com",
+  projectId: "temporarynotepad",
+  storageBucket: "temporarynotepad.appspot.com",
+  messagingSenderId: "998970069593",
+  appId: "1:998970069593:web:93065677dbcd790201d748",
+  measurementId: "G-5Q0KJ62KWM"
+};
+
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
-var db = firebase.firestore();
+const db = firebase.firestore();
+const analytics = firebase.analytics();
 
 function saveContent() {
+    console.log("save trigger");
     const content = document.getElementById('content').value;
 
     // Save content to Firebase
@@ -28,6 +31,7 @@ function saveContent() {
 }
 
 function loadContent() {
+    console.log("Load trigger");
     // Retrieve content from Firebase
     db.collection("mypastebin").doc("singleSlot").get()
     .then((doc) => {
