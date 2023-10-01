@@ -1,0 +1,25 @@
+<script type="module">
+  
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-analytics.js";
+    import { getFirestore } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyB8ysU7L_GXnYwMtLAHAp6clC4t27TJIV0",
+      authDomain: "temporarynotepad.firebaseapp.com",
+      projectId: "temporarynotepad",
+      storageBucket: "temporarynotepad.appspot.com",
+      messagingSenderId: "998970069593",
+      appId: "1:998970069593:web:93065677dbcd790201d748",
+      measurementId: "G-5Q0KJ62KWM"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const db = getFirestore(app);
+
+  </script>
+
+<textarea id="content" rows="10" cols="50"></textarea><br>
+<button onclick="saveContent()">Save</button>
+<button onclick="loadContent()">Load</button>
