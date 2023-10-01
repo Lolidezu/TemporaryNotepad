@@ -1,2 +1,8 @@
 # .gitignore
 config.js
+.firebase
+.github/workflows
+public
+.github/workflows
+.github/workflows
+firebase.json
