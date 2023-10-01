@@ -10,9 +10,9 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore();
-const analytics = firebase.analytics();
+const app = firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore(app);
+const analytics = firebase.analytics(app);
 
 function saveContent() {
     console.log("save trigger");
