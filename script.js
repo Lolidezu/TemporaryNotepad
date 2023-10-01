@@ -1,19 +1,18 @@
-// Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 var db = firebase.firestore();
 
 function saveData() {
     var userInput = document.getElementById('userInput').value;
-    // Specify a document ID instead of letting Firestore auto-generate one
     var docRef = db.collection("users").doc("singleDocument");
     docRef.set({
         user_input: userInput
     })
-    .then(() => {
-        console.log("Document successfully written!");
+    .then(() => { 
+        alert("Data saved successfully!");
+        document.getElementById('userInput').value = "";
     })
     .catch((error) => {
-        console.error("Error writing document: ", error);
+        console.error("Error writing data: ", error);
     });
 }
 
@@ -24,10 +23,9 @@ function retrieveData() {
             var outputDiv = document.getElementById('output');
             outputDiv.innerHTML = `<p>${doc.data().user_input}</p>`;  // Display the data
         } else {
-            // doc.data() will be undefined in this case
-            console.log("No such document!");
+            console.log("No data yet!");
         }
     }).catch((error) => {
-        console.error("Error getting document:", error);
+        console.error("Error getting data:", error);
     });
 }
