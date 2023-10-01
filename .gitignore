@@ -1,8 +1,5 @@
 # .gitignore
 config.js
-.firebase/ 
-.github/workflows/ 
-public/ 
 database.rules.json
 firebase.json
 
