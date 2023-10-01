@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temporary Notepad</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
+</head>
+<body>
+<h1 id="title">Temporary Notepad</h1>
+<input type="text" id="userInput" placeholder="Input your note here">
+<button onclick="saveData()">Save</button>
+<button onclick="retrieveData()">Retrieve</button>
+
+<div id="output"></div>
+<script src="config.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
